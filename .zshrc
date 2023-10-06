@@ -11,7 +11,7 @@
 export LANG=en_US.UTF-8
 export TERM="xterm-256color"
 export EDITOR=nvim
-export ZPLUG_HOME="${XDG_DATA_HOME}/.zplug"
+export ZPLUG_HOME="${HOME}/.zplug"
 export ZPLUG_BIN="${ZPLUG_HOME}/bin"
 export ZPLUG_REPOS="${ZPLUG_HOME}/repos"
 export ZPLUG_CACHE_DIR="${ZPLUG_HOME}/cache"
@@ -30,7 +30,6 @@ export PATH="${HOMEBREW_HOME}/bin:${PATH}"
 source "${ZPLUG_HOME}"/init.zsh
 
 zplug "plugins/colored-man-pages", from:oh-my-zsh
-zplug "plugins/command-not-found", from:oh-my-zsh
 zplug "b4b4r07/enhancd", from:github
 zplug "mafredri/zsh-async", from:github
 zplug "darvid/zsh-poetry", from:github
@@ -86,9 +85,6 @@ source ${HOMEBREW_HOME}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Load colorscheme
 (cat ~/.cache/wal/sequences &) 
 
-# Load neofetch
-# neofetch 
-
 # Enable pyenv
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
@@ -98,7 +94,6 @@ eval "$(pyenv init -)"
 # ALIASES
 #
 alias vim='nvim'
-alias emacs='emacs -nw'
 alias zj='zellij'
 
 # Moving around
@@ -127,7 +122,7 @@ alias h='history'
 alias hs='history | grep'
 
 # Bare repo
-alias config="git --git-dir=${HOME}/Work/dev/dots --work-tree=${HOME}"
+alias config="git --git-dir=${HOME}/.config/dots --work-tree=${HOME}"
 
 # Python
 alias pip='pip3'
@@ -163,12 +158,6 @@ PATH="${HOMEBREW_HOME}/opt/coreutils/libexec/gnubin:${PATH}"
 # ScalaTIKZ
 PATH="${LOCAL_OPT}/scalatikz/bin:${PATH}"
 
-# Rust
-PATH="${HOME}/.cargo/bin:${PATH}"
-
-# Add native libraries
-DYLD_LIBRARY_PATH="${HOMEBREW_HOME}/opt/lp_solve/lib:${DYLD_LIBRARY_PATH}"
-
 # Source private configurations
 source "${HOME}/.private"
 
@@ -178,8 +167,3 @@ export PATH DYLD_LIBRARY_PATH
 # Enable SDKMAN
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
-
-# Auto-attach Zellij
-#export ZELLIJ_AUTO_ATTACH=true
-#eval "$(zellij setup --generate-auto-start zsh)"
-

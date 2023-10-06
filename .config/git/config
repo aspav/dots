@@ -1,9 +1,9 @@
 [user]
-	name = Evangelos Michelioudakis
-	email = evangelos@pollfish.com
+	name = Aspasia Vozi
+	email = aspasia.vozi@gmail.com
 
 [core]
-	editor = nvim
+	editor = code
 	autocrlf = input
 	pager = delta
 
@@ -24,3 +24,5 @@
 
 [diff]
     colorMoved = default
+[status]
+	showUntrackedFiles = no
